@@ -1,0 +1,562 @@
+fileFormatVersion: 2
+guid: 6b77c561762a9a24b8f6316efbfeefe4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5952493750055441472
+    second: softball-v1_0
+  - first:
+      213: -7897710003229160935
+    second: softball-v1_1
+  - first:
+      213: -7567989267731084691
+    second: softball-v1_2
+  - first:
+      213: 4061161612070907662
+    second: softball-v1_3
+  - first:
+      213: -3588900432333178646
+    second: softball-v1_4
+  - first:
+      213: 4525780081051536167
+    second: softball-v1_5
+  - first:
+      213: -4744013853815430980
+    second: softball-v1_6
+  - first:
+      213: 9212444751079063070
+    second: softball-v1_7
+  - first:
+      213: -5345509729090495122
+    second: softball-v1_8
+  - first:
+      213: -2984209531029306334
+    second: softball-v1_9
+  - first:
+      213: -3038518311886947358
+    second: softball-v1_10
+  - first:
+      213: 8006897910649891366
+    second: softball-v1_11
+  - first:
+      213: -4156876303273677049
+    second: softball-v1_12
+  - first:
+      213: 6380735558169528146
+    second: softball-v1_13
+  - first:
+      213: -257572966710321780
+    second: softball-v1_14
+  - first:
+      213: -5673258473127804402
+    second: softball-v1_15
+  - first:
+      213: 3307612180984594758
+    second: softball-v1_16
+  - first:
+      213: 2154661692906220959
+    second: softball-v1_17
+  - first:
+      213: -8763098219393660219
+    second: softball-v1_18
+  - first:
+      213: 4561226484818787501
+    second: softball-v1_19
+  - first:
+      213: 2397451125096962133
+    second: softball-v1_20
+  - first:
+      213: -4884931635862794912
+    second: softball-v1_21
+  - first:
+      213: -8685124046183914321
+    second: softball-v1_22
+  - first:
+      213: 1435834611219782532
+    second: softball-v1_23
+  - first:
+      213: -6488471518248334710
+    second: softball-v1_24
+  - first:
+      213: 2745050396941592594
+    second: softball-v1_25
+  - first:
+      213: -8486157150961258664
+    second: softball-v1_26
+  - first:
+      213: -8496455789286865033
+    second: softball-v1_27
+  - first:
+      213: -1715538935178995471
+    second: softball-v1_28
+  - first:
+      213: -267275561998894477
+    second: softball-v1_29
+  - first:
+      213: 1795744364985735191
+    second: softball-v1_30
+  - first:
+      213: -8489789133498757534
+    second: softball-v1_31
+  - first:
+      213: 9197248275473349839
+    second: softball-v1_32
+  - first:
+      213: 4762033114059447254
+    second: softball-v1_33
+  - first:
+      213: 707073884986504717
+    second: softball-v1_34
+  - first:
+      213: -2816964574072222737
+    second: softball-v1_35
+  - first:
+      213: -8187396984424136478
+    second: softball-v1_36
+  - first:
+      213: 6206410464116022399
+    second: softball-v1_37
+  - first:
+      213: 7728086449347262953
+    second: softball-v1_38
+  - first:
+      213: 4523717155286540025
+    second: softball-v1_39
+  - first:
+      213: 135383765495916279
+    second: softball-v1_40
+  - first:
+      213: 7798978054754655007
+    second: softball-v1_41
+  - first:
+      213: 2522085804016153371
+    second: softball-v1_42
+  - first:
+      213: 430873282090533611
+    second: softball-v1_43
+  - first:
+      213: -1079710181862808441
+    second: softball-v1_44
+  - first:
+      213: -7521159545651039925
+    second: softball-v1_45
+  - first:
+      213: -3430898226665766377
+    second: softball-v1_46
+  - first:
+      213: 787003962523616544
+    second: softball-v1_47
+  - first:
+      213: 6550928765422303756
+    second: softball-v1_48
+  - first:
+      213: 3694697652023973740
+    second: softball-v1_49
+  - first:
+      213: 4478019035684464916
+    second: softball-v1_50
+  - first:
+      213: -5629224099298923347
+    second: softball-v1_51
+  - first:
+      213: -3804977158524757092
+    second: softball-v1_52
+  - first:
+      213: -5853599148006021427
+    second: softball-v1_53
+  - first:
+      213: 4320386909870841940
+    second: softball-v1_54
+  - first:
+      213: -8124276372503357619
+    second: softball-v1_55
+  - first:
+      213: 7549722241674273044
+    second: softball-v1_56
+  - first:
+      213: 7879225045373967081
+    second: softball-v1_57
+  - first:
+      213: 8831416938799003894
+    second: softball-v1_58
+  - first:
+      213: -8840966268629748917
+    second: softball-v1_59
+  - first:
+      213: 2713282573580265954
+    second: softball-v1_60
+  - first:
+      213: -5265228736109620397
+    second: softball-v1_61
+  - first:
+      213: 7342485177072130548
+    second: softball-v1_62
+  - first:
+      213: -582271794159084191
+    second: softball-v1_63
+  - first:
+      213: -6450121013922084172
+    second: softball-v1_64
+  - first:
+      213: -2522054268429804101
+    second: softball-v1_65
+  - first:
+      213: -8746974598935046171
+    second: softball-v1_66
+  - first:
+      213: 9135713690736785525
+    second: softball-v1_67
+  - first:
+      213: 912659976662154609
+    second: softball-v1_68
+  - first:
+      213: -834359452636030252
+    second: softball-v1_69
+  - first:
+      213: 2548622433213845646
+    second: softball-v1_70
+  - first:
+      213: -8401317789718795883
+    second: softball-v1_71
+  - first:
+      213: 3174338311548706693
+    second: softball-v1_72
+  - first:
+      213: -206778097342839442
+    second: softball-v1_73
+  - first:
+      213: -5338293549827326668
+    second: softball-v1_74
+  - first:
+      213: 7561353135572300971
+    second: softball-v1_75
+  - first:
+      213: 948718669915866670
+    second: softball-v1_76
+  - first:
+      213: -3049154291006436536
+    second: softball-v1_77
+  - first:
+      213: -9039909692079507755
+    second: softball-v1_78
+  - first:
+      213: 3673136624043378059
+    second: softball-v1_79
+  - first:
+      213: 5149162096900887153
+    second: softball-v1_80
+  - first:
+      213: -2923950412755562838
+    second: softball-v1_81
+  - first:
+      213: -1905171712147274151
+    second: softball-v1_82
+  - first:
+      213: 5664814234727298280
+    second: softball-v1_83
+  - first:
+      213: 7293128127181507836
+    second: softball-v1_84
+  - first:
+      213: 8221232074823587869
+    second: softball-v1_85
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: softball-v1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04499cb27818b9250800000000000000
+      internalID: 5952493750055441472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: softball-v1_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 3
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a0a7e8892b56290800000000000000
+      internalID: -7897710003229160935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: softball-v1_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 3
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6a8be0abd919f690800000000000000
+      internalID: -7567989267731084691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: softball-v1_3
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 3
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0f60fe18f42c5830800000000000000
+      internalID: 4061161612070907662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: softball-v1_4
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 3
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae8f884521aa13ec0800000000000000
+      internalID: -3588900432333178646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: softball-v1_5
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 2
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b8d9e410dcece30800000000000000
+      internalID: 4525780081051536167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: softball-v1_6
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0acc9e880e92eb0800000000000000
+      internalID: -4744013853815430980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: softball-v1_7
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 2
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ebaf401bd29df70800000000000000
+      internalID: 9212444751079063070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: softball-v1_8
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 3
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d9a2e193fe0d5b0800000000000000
+      internalID: -5345509729090495122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -14,22 +14,22 @@ public class Equipment : Item
         switch(type)
         {
             case (equipmentTypes.armor):
-                player.defMod = modAmt;
+                PlayerController.player.defMod = modAmt;
                 break;
             case (equipmentTypes.boots):
-                player.spdMod = modAmt;
+                PlayerController.player.spdMod = modAmt;
                 break;
             case (equipmentTypes.amulets):
-                player.GetComponentInChildren<WeaponController>().curWeapon.potency += modAmt;
+                PlayerController.player.GetComponentInChildren<WeaponController>().curWeapon.potency += modAmt;
                 break;
             case (equipmentTypes.hpIncrease):
-                player.maxHpMod = modAmt;
+                PlayerController.player.maxHpMod = modAmt;
                 break;
             case (equipmentTypes.healingIncrease):
-                player.healingMod = modAmt;
+                PlayerController.player.healingMod = modAmt;
                 break;
             case (equipmentTypes.goldIncrease):
-                player.goldMod = modAmt;
+                PlayerController.player.goldMod = modAmt;
                 break;
         }
     }

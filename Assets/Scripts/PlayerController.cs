@@ -49,7 +49,10 @@ public class PlayerController : MonoBehaviour
         bod = GetComponent<Rigidbody2D>();
     }
 
-    public void ResetEverything();
+    public void ResetEverything()
+    {
+
+    }
     
     void FixedUpdate()
     {

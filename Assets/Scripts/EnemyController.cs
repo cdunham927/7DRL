@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -39,7 +40,17 @@ public class EnemyController : MonoBehaviour
     //public GameObject gold;
 
     //Enemy damage cooldown(iframes)
+    public float iframes = 0.15f;
     float cools = 0f;
+
+    //UI
+    Image hpImg;
+    public float lerpSpd;
+
+    private void Awake()
+    {
+        hpImg = GetComponentInChildren<Image>();
+    }
 
     void OnEnable()
     {
@@ -74,6 +85,9 @@ public class EnemyController : MonoBehaviour
         if (curBurn <= 0) burned = false;
         if (curSlow <= 0) slowed = false;
         if (curParalyze <= 0) paralyzed = false;
+
+        //Update UI
+        hpImg.fillAmount = Mathf.Lerp(hpImg.fillAmount, hp / maxHp, lerpSpd * Time.deltaTime);
     }
 
     public void TakeDamage(Weapon.weaponEffect effect, float potency, float dmg, float mod)
@@ -84,34 +98,35 @@ public class EnemyController : MonoBehaviour
                 case (Weapon.weaponEffect.none):
                     hp -= CalculateDamage(dmg, mod);
                     if (hp <= 0) Die();
+                    cools = iframes;
                     break;
                 case (Weapon.weaponEffect.poison):
                     hp -= CalculateDamage(dmg, mod);
                     if (hp <= 0) Die();
                     curPoison += potency;
                     if (curPoison >= poisonResistance) poisoned = true;
-                    cools = 0.1f;
+                    cools = iframes;
                     break;
                 case (Weapon.weaponEffect.burn):
                     hp -= CalculateDamage(dmg, mod);
                     if (hp <= 0) Die();
                     curBurn += potency;
                     if (curBurn >= burnResistance) burned = true;
-                    cools = 0.1f;
+                    cools = iframes;
                     break;
                 case (Weapon.weaponEffect.slow):
                     hp -= CalculateDamage(dmg, mod);
                     if (hp <= 0) Die();
                     curSlow += potency;
                     if (curSlow >= slowResistance) slowed = true;
-                    cools = 0.1f;
+                    cools = iframes;
                     break;
                 case (Weapon.weaponEffect.paralyze):
                     hp -= CalculateDamage(dmg, mod);
                     if (hp <= 0) Die();
                     curParalyze += potency;
                     if (curParalyze >= paralyzeResistance) paralyzed = true;
-                    cools = 0.1f;
+                    cools = iframes;
                     break;
             }
         }
@@ -119,7 +134,9 @@ public class EnemyController : MonoBehaviour
 
     public float CalculateDamage(float atk, float mod)
     {
-        return ((atk + mod) - def);
+        float tot = ((atk + mod) - def);
+        if (tot > 0) return tot;
+        return 1;
     }
 
     public void Die()

@@ -85,4 +85,12 @@ public class WeaponController : MonoBehaviour
             col.GetComponent<EnemyController>().TakeDamage(curWeapon.effect, curWeapon.potency, curWeapon.atk, dmgModifier);
         }
     }
+
+    void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.CompareTag("Enemy"))
+        {
+            col.GetComponent<EnemyController>().TakeDamage(curWeapon.effect, curWeapon.potency, curWeapon.atk, dmgModifier);
+        }
+    }
 }

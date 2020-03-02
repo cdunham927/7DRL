@@ -14,6 +14,14 @@ public class WeaponController : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    private void OnEnable()
+    {
+        if (curWeapon == null)
+        {
+            curWeapon = FindObjectOfType<Weapon>();
+        }
+    }
+
     void Update()
     {
         if (Input.GetMouseButton(0) && cools <= 0f)

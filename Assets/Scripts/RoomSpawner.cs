@@ -15,7 +15,6 @@ public class RoomSpawner : MonoBehaviour
 
     RoomTemplates templates;
     public GameObject initialSpawn;
-    public bool randomStart = false;
 
     GameObject obj;
     AddRoom curRoom;
@@ -25,7 +24,7 @@ public class RoomSpawner : MonoBehaviour
         //Destroy spawns after they've done their part
         Destroy(gameObject, waitTime);
         templates = FindObjectOfType<RoomTemplates>();
-        Invoke("Spawn", Random.Range(0.05f, 0.175f));
+        if (!spawned) Invoke("Spawn", Random.Range(0.05f, 0.275f));
     }
 
     void Spawn()
@@ -115,13 +114,19 @@ public class RoomSpawner : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Rooms"))
+        {
+            spawned = true;
+            //Destroy(gameObject);
+        }
+
         if (collision.CompareTag("Spawn"))
         {
             if (collision.GetComponent<RoomSpawner>().spawned == false && spawned == false)
             {
                 //Spawn wall blocking off any openings
                 Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
             spawned = true;
         }

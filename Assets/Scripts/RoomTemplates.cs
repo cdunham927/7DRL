@@ -30,6 +30,7 @@ public class RoomTemplates : MonoBehaviour
 
     public List<GameObject> rooms;
 
+    //Wait for the camera to change
     public float waitTime = 4f;
     public bool spawnedBoss;
     public GameObject boss;
@@ -48,6 +49,8 @@ public class RoomTemplates : MonoBehaviour
     public int[] maxOfRoomtype;
     //  0 - enemy     1 - loot    2 - shop      3 - bosskey     4 - boss    5 - player
     int[] numOfRoomtype;
+
+    public AddRoom bossRoom;
 
     private void Awake()
     {
@@ -99,6 +102,7 @@ public class RoomTemplates : MonoBehaviour
         //Instantiate(boss, rooms[rooms.Count - 1].transform.position, Quaternion.identity);
         //Instantiate(bossBG, rooms[rooms.Count - 1].transform.position, Quaternion.identity);
         rooms[rooms.Count - 1].GetComponent<AddRoom>().ChangeRoom(AddRoom.RoomTypes.boss);
+        bossRoom = rooms[rooms.Count - 1].GetComponent<AddRoom>();
         Invoke("CameraChange", 0.5f);
     }
 
@@ -121,6 +125,10 @@ public class RoomTemplates : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                bossRoom.Unlock();
             }
         }
     }

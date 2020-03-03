@@ -13,10 +13,6 @@ public class Weapon : Item
     //Cooldown for weapon
     public float cooldown;
 
-    //Rarity of weapon
-    public enum Rarity { legendary = 5, rare = 15, uncommon = 30, common = 100 }
-    public Rarity rarity = Rarity.common;
-
     //Changes how affective the weapons status effect is
     //Ie. burning sword with potency 3 inflicts burn slower than burning sword with potency 10
     public float potency;

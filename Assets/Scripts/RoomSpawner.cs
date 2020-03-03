@@ -86,18 +86,20 @@ public class RoomSpawner : MonoBehaviour
             templates = FindObjectOfType<RoomTemplates>();
 
             //Pick a procedural room type
-            Debug.Log((int)AddRoom.RoomTypes.len);
+            //Debug.Log((int)AddRoom.RoomTypes.len);
             //int n = Random.Range(0, (int)RoomTypes.len - 3);
             float ran = Random.value;
             for (int i = 0; i < (int)AddRoom.RoomTypes.len - 3; i++)
             {
                 if (ran < templates.chancePerRoom[i])
                 {
-                    Debug.Log("Spawning a room: " + i);
+                    //Debug.Log("Spawning a room: " + i);
                     if (templates.maxOfRoomtype[i] > templates.NumOfRooms(i))
                     {
-                        obj.GetComponent<AddRoom>().roomType = (AddRoom.RoomTypes)i;
-                        Debug.Log((AddRoom.RoomTypes)i + " Room");
+                        AddRoom rm = obj.GetComponent<AddRoom>();
+                        //rm.roomType = (AddRoom.RoomTypes)i;
+                        rm.ChangeRoom((AddRoom.RoomTypes)i);
+                        //Debug.Log((AddRoom.RoomTypes)i + " Room");
                         break;
                     }
                 }

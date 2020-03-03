@@ -36,11 +36,14 @@ public class RoomTemplates : MonoBehaviour
     public GameObject boss;
 
     public GameObject player;
-    public GameObject playerBg;
+    //public GameObject playerBg;
     CameraController cam;
 
 
     //For showing which room is which
+    [Header("Banner for the room")]
+    public Sprite[] bannerSprites;
+    [Header("Carpet for the room")]
     public GameObject[] roomSprites;
     [Range(0, 1)]
     public float[] chancePerRoom;
@@ -51,6 +54,13 @@ public class RoomTemplates : MonoBehaviour
     int[] numOfRoomtype;
 
     public AddRoom bossRoom;
+
+    [Header("For enemy spawning")]
+    public float enemySpawnChance = 0.35f;
+    public int maxEnemiesPerRoom = 3;
+    //Should have multiple enemy lists so that we can get different types of enemies spawning on certain floors
+    //public List<EnemyController> enemyList;
+    public GameObject enemy;
 
     private void Awake()
     {
@@ -67,7 +77,7 @@ public class RoomTemplates : MonoBehaviour
         //Get reference to current room spawned
         AddRoom curRoom = obj.GetComponent<AddRoom>();
         curRoom.roomType = AddRoom.RoomTypes.player;
-        Debug.Log("Room type number: " + (int)curRoom.roomType);
+        //Debug.Log("Room type number: " + (int)curRoom.roomType);
         //Add to current number of rooms of that type
         AddRoomType(curRoom.roomType, obj);
         //Instantiate the rooms background for debugging
@@ -110,6 +120,7 @@ public class RoomTemplates : MonoBehaviour
     {
         int x = Random.Range(1, rooms.Count - 2);
         rooms[x].GetComponent<AddRoom>().ChangeRoom(AddRoom.RoomTypes.bosskey);
+
     }
 
     void CameraChange()

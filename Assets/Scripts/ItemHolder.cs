@@ -10,6 +10,8 @@ public class ItemHolder : MonoBehaviour
     public List<Item> uncommonItemsList;
     public List<Item> rareItemsList;
     public List<Item> legendaryItemsList;
+    //Should have more lists for certain item types(Ex. list of all poison items)
+
 
     private void Awake()
     {

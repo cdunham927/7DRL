@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -37,6 +38,13 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public float goldMod;
 
+    //Health Image
+    public Image hpBar;
+
+    //Floor Level
+    public int floor = 1;
+    public Text floorText;
+
     void Awake()
     {
         if (player == null)
@@ -47,6 +55,7 @@ public class PlayerController : MonoBehaviour
 
         hp = maxHp;
         bod = GetComponent<Rigidbody2D>();
+        
     }
 
     public void ResetEverything()
@@ -62,6 +71,13 @@ public class PlayerController : MonoBehaviour
         {
             bod.AddForce(new Vector2(inp.x * spd * Time.deltaTime, inp.y * spd * Time.deltaTime));
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            TakeDamage(20);
+        }
+        hpBar.fillAmount = hp / maxHp;
+        floorText.text = "Floor: " + floor.ToString();
     }
 
     public void SwitchEquipment(Equipment equip)
@@ -82,5 +98,10 @@ public class PlayerController : MonoBehaviour
     public void PickupGold(float amt)
     {
         gold += (amt + goldMod);
+    }
+
+    void TakeDamage(float dmg)
+    {
+        hp -= dmg;
     }
 }

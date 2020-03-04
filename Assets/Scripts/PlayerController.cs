@@ -40,10 +40,14 @@ public class PlayerController : MonoBehaviour
 
     //Health Image
     public Image hpBar;
+    public float lerpSpd = 10f;
 
     //Floor Level
     public int floor = 1;
     public Text floorText;
+
+    //Gold text
+    public Text goldText;
 
     void Awake()
     {
@@ -52,10 +56,10 @@ public class PlayerController : MonoBehaviour
             player = this;
             DontDestroyOnLoad(gameObject);
         }
+        else Destroy(gameObject);
 
         hp = maxHp;
         bod = GetComponent<Rigidbody2D>();
-        
     }
 
     public void ResetEverything()
@@ -76,8 +80,17 @@ public class PlayerController : MonoBehaviour
         {
             TakeDamage(20);
         }
-        hpBar.fillAmount = hp / maxHp;
-        floorText.text = "Floor: " + floor.ToString();
+        if (hpBar != null) hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount, hp / maxHp, lerpSpd * Time.deltaTime);
+        if (floorText != null) floorText.text = "Floor: " + floor.ToString();
+        if (goldText != null) goldText.text = gold.ToString();
+
+        if (Application.isEditor)
+        {
+            if (Input.GetKey(KeyCode.M))
+            {
+                gold += 1;
+            }
+        }
     }
 
     public void SwitchEquipment(Equipment equip)
@@ -97,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
     public void PickupGold(float amt)
     {
-        gold += (amt + goldMod);
+        gold += (amt + (amt * goldMod));
     }
 
     void TakeDamage(float dmg)

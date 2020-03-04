@@ -7,6 +7,7 @@ TagManager:
   - Spawn
   - Rooms
   - Enemy
+  - hpBar
   layers:
   - Default
   - TransparentFX

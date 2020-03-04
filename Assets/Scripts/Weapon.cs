@@ -21,4 +21,9 @@ public class Weapon : Item
     public float atk;
 
     public override void Use() { }
+
+    public override void PickupItem()
+    {
+        PlayerController.player.GetComponentInChildren<WeaponController>().SwitchWeapon(this);
+    }
 }

@@ -130,7 +130,8 @@ MonoBehaviour:
   rooms: []
   waitTime: 3
   spawnedBoss: 0
-  boss: {fileID: 3872193894618934149, guid: 80f263ac968f5254e88ddaba61e7b36c, type: 3}
+  boss:
+  - {fileID: 3872193894618934149, guid: 80f263ac968f5254e88ddaba61e7b36c, type: 3}
   player: {fileID: 1780368358873162405, guid: 947282fa24917324081c419ee33b6892, type: 3}
   bannerSprites:
   - {fileID: 21300000, guid: 89a787ae06eceed40ad91c73620f11a8, type: 3}
@@ -154,7 +155,13 @@ MonoBehaviour:
   bossRoom: {fileID: 0}
   enemySpawnChance: 0.35
   maxEnemiesPerRoom: 3
-  enemy: {fileID: 5544316268238207721, guid: 5a5554dc4a6b8f04294408e90324d6cc, type: 3}
+  enemy:
+  - {fileID: 5544316268238207721, guid: 5a5554dc4a6b8f04294408e90324d6cc, type: 3}
+  minibossEnemies:
+  - {fileID: 1173648116781216563, guid: 58425dad0ac57fe41a7e5f9d336fb794, type: 3}
+  chests:
+  - {fileID: 8310253052945738106, guid: 9989197a2f1337d4bafe511800f38ddc, type: 3}
+  exit: {fileID: 6349985990172852304, guid: eb413eec9ee66494daaf0305bcc65cd9, type: 3}
 --- !u!114 &7322676219202678179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +180,13 @@ MonoBehaviour:
   - {fileID: 1995066761660368925, guid: 35ffd12f886c8894280db13383b71b13, type: 3}
   - {fileID: 6199950189564728160, guid: 4691af6377cc430498d3049fe68e338f, type: 3}
   - {fileID: 1913629565903535396, guid: f25526baeeac1794196e89bae37674b1, type: 3}
+  - {fileID: 5571930064019830752, guid: 427b78fd3ced2f54c9774e77b5003d15, type: 3}
+  - {fileID: 6429409008525536416, guid: 3dbbc4a1d2e6e854f9a2e979ce5f3f60, type: 3}
   commonItemsList: []
   uncommonItemsList: []
   rareItemsList: []
   legendaryItemsList: []
+  commonWeaponsList: []
+  uncommonWeaponsList: []
+  rareWeaponsList: []
+  legendaryWeaponsList: []

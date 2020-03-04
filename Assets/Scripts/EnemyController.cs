@@ -81,9 +81,19 @@ public class EnemyController : MonoBehaviour
     public float spdBuff = 0.05f;
     public float goldBuff = 0.2f;
 
+    //For despawning in enemy rooms
+    AddRoom room;
+
+    public GameObject gold;
+
     void OnEnable()
     {
         SetStats();
+    }
+
+    public void SetRoom(AddRoom rm)
+    {
+        room = rm;
     }
 
     void SetStats()
@@ -239,10 +249,11 @@ public class EnemyController : MonoBehaviour
     public void Die()
     {
         //Drop gold
-        //GameObject obj = Instantiate(gold, transform.position, transform.rotation);
-        //obj.GetComponent<GoldController>().gold = goldDropAmt;
+        GameObject obj = Instantiate(gold, transform.position, transform.rotation);
+        obj.GetComponent<GoldController>().amt = goldDropAmt;
 
         //Die
+        room.RemoveFromRoom(this);
         gameObject.SetActive(false);
     }
 }

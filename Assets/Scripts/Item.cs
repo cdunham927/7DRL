@@ -16,6 +16,10 @@ public class Item : MonoBehaviour
     public enum Rarity { legendary = 5, rare = 15, uncommon = 30, common = 100 }
     public Rarity rarity = Rarity.common;
 
+    //For buying items from the shop
+    public bool buying = false;
+    public float cost = 1;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && canPickup)

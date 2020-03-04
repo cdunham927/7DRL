@@ -11,7 +11,10 @@ public class ItemHolder : MonoBehaviour
     public List<Item> rareItemsList;
     public List<Item> legendaryItemsList;
     //Should have more lists for certain item types(Ex. list of all poison items)
-
+    public List<Item> commonWeaponsList;
+    public List<Item> uncommonWeaponsList;
+    public List<Item> rareWeaponsList;
+    public List<Item> legendaryWeaponsList;
 
     private void Awake()
     {
@@ -19,6 +22,10 @@ public class ItemHolder : MonoBehaviour
         uncommonItemsList = new List<Item>();
         rareItemsList = new List<Item>();
         legendaryItemsList = new List<Item>();
+        commonWeaponsList = new List<Item>();
+        uncommonWeaponsList = new List<Item>();
+        rareWeaponsList = new List<Item>();
+        legendaryWeaponsList = new List<Item>();
 
         //Add the items to lists respective to their rarity
         foreach (Item it in allItemsList)
@@ -56,6 +63,28 @@ public class ItemHolder : MonoBehaviour
         }
         ind = Random.Range(0, legendaryItemsList.Count);
         return legendaryItemsList[ind];
+    }
+
+    public Item GetWeapon(Item.Rarity rarity)
+    {
+        int ind;
+        if (rarity == Item.Rarity.common)
+        {
+            ind = Random.Range(0, commonItemsList.Count);
+            return commonWeaponsList[ind];
+        }
+        else if (rarity == Item.Rarity.uncommon)
+        {
+            ind = Random.Range(0, uncommonItemsList.Count);
+            return uncommonWeaponsList[ind];
+        }
+        else if (rarity == Item.Rarity.rare)
+        {
+            ind = Random.Range(0, rareItemsList.Count);
+            return rareWeaponsList[ind];
+        }
+        ind = Random.Range(0, legendaryItemsList.Count);
+        return legendaryWeaponsList[ind];
     }
 
     public void RemoveItem(Item it)

@@ -8,7 +8,7 @@ public class ClosedRoomController : MonoBehaviour
     {
         if (collision.CompareTag("Rooms"))
         {
-            Debug.Log("Destroyed closed room");
+            //Debug.Log("Destroyed closed room");
             Destroy(gameObject);
         }
     }

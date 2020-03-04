@@ -33,7 +33,7 @@ public class RoomTemplates : MonoBehaviour
     //Wait for the camera to change
     public float waitTime = 4f;
     public bool spawnedBoss;
-    public GameObject boss;
+    public GameObject[] boss;
 
     public GameObject player;
     //public GameObject playerBg;
@@ -60,7 +60,14 @@ public class RoomTemplates : MonoBehaviour
     public int maxEnemiesPerRoom = 3;
     //Should have multiple enemy lists so that we can get different types of enemies spawning on certain floors
     //public List<EnemyController> enemyList;
-    public GameObject enemy;
+    public GameObject[] enemy;
+    public GameObject[] minibossEnemies;
+
+    [Header("Loot")]
+    public GameObject[] chests;
+
+    [Header("For leaving the floor")]
+    public GameObject exit;
 
     private void Awake()
     {
@@ -77,6 +84,7 @@ public class RoomTemplates : MonoBehaviour
         //Get reference to current room spawned
         AddRoom curRoom = obj.GetComponent<AddRoom>();
         curRoom.roomType = AddRoom.RoomTypes.player;
+        curRoom.ChangeRoom(AddRoom.RoomTypes.player);
         //Debug.Log("Room type number: " + (int)curRoom.roomType);
         //Add to current number of rooms of that type
         AddRoomType(curRoom.roomType, obj);
@@ -120,7 +128,6 @@ public class RoomTemplates : MonoBehaviour
     {
         int x = Random.Range(1, rooms.Count - 2);
         rooms[x].GetComponent<AddRoom>().ChangeRoom(AddRoom.RoomTypes.bosskey);
-
     }
 
     void CameraChange()
@@ -136,6 +143,7 @@ public class RoomTemplates : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                PlayerController.player.transform.position = Vector3.zero + new Vector3(0, -0.5f, 0);
             }
             if (Input.GetKeyDown(KeyCode.L))
             {

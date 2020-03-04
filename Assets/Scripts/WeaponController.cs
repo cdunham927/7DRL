@@ -9,6 +9,8 @@ public class WeaponController : MonoBehaviour
     Animator anim;
     float cools = 0f;
 
+    ItemHolder itemHolder;
+
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -16,9 +18,10 @@ public class WeaponController : MonoBehaviour
 
     private void OnEnable()
     {
+        itemHolder = FindObjectOfType<ItemHolder>();
         if (curWeapon == null)
         {
-            curWeapon = FindObjectOfType<Weapon>();
+            curWeapon = (Weapon)itemHolder.GetWeapon(Item.Rarity.common);
         }
     }
 
@@ -47,9 +50,14 @@ public class WeaponController : MonoBehaviour
         }
 
         if (cools > 0) cools -= Time.deltaTime;
+
+        if (Application.isEditor)
+        {
+
+        }
     }
 
-    void SwitchWeapon(Weapon weap)
+    public void SwitchWeapon(Weapon weap)
     {
         if (curWeapon != null)
         {

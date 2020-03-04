@@ -9,6 +9,7 @@ public class ChestController : MonoBehaviour
     public Item it;
     Animator anim;
     ItemHolder items;
+    bool opened = false;
 
     private void Awake()
     {
@@ -20,10 +21,11 @@ public class ChestController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && canOpen)
+        if (Input.GetKeyDown(KeyCode.E) && canOpen && !opened)
         {
             anim.Play("Open");
             Invoke("ActivateItem", 0.5f);
+            opened = true;
         }
     }
 

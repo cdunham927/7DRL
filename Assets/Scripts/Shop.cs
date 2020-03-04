@@ -4,15 +4,42 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] itemSpawns;
+    ItemHolder items;
+    Item it;
+
+    private void Awake()
     {
-        
+        items = FindObjectOfType<ItemHolder>();
+        Invoke("GetItems", 0.25f);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GetItems()
     {
-        
+        for (int i = 0; i < itemSpawns.Length; i++)
+        {
+            int x = Random.Range(0, 100);
+            //Get item with random rarity
+            if (x < (int)Item.Rarity.legendary)
+            {
+                it = Instantiate(items.GetItem(Item.Rarity.legendary), itemSpawns[i].transform.position, Quaternion.identity);
+                it.buying = true;
+            }
+            else if (x < (int)Item.Rarity.rare)
+            {
+                it = Instantiate(items.GetItem(Item.Rarity.rare), itemSpawns[i].transform.position, Quaternion.identity);
+                it.buying = true;
+            }
+            else if (x < (int)Item.Rarity.uncommon)
+            {
+                it = Instantiate(items.GetItem(Item.Rarity.uncommon), itemSpawns[i].transform.position, Quaternion.identity);
+                it.buying = true;
+            }
+            else
+            {
+                it = Instantiate(items.GetItem(Item.Rarity.common), itemSpawns[i].transform.position, Quaternion.identity);
+                it.buying = true;
+            }
+        }
     }
 }

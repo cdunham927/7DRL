@@ -1,0 +1,595 @@
+fileFormatVersion: 2
+guid: 1efddc9a789c887429d24f8fa4b62156
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4730613398662164039
+    second: 7Day_ChestUncommonOpen_0
+  - first:
+      213: -7487043801875507710
+    second: 7Day_ChestUncommonOpen_1
+  - first:
+      213: -1623889103029940789
+    second: 7Day_ChestUncommonOpen_2
+  - first:
+      213: 3665355847195738946
+    second: 7Day_ChestUncommonOpen_3
+  - first:
+      213: 142336498336005785
+    second: 7Day_ChestUncommonOpen_4
+  - first:
+      213: 1913447646736006544
+    second: 7Day_ChestUncommonOpen_5
+  - first:
+      213: -8756605190679094891
+    second: 7Day_ChestUncommonOpen_6
+  - first:
+      213: -1347655375193607067
+    second: 7Day_ChestUncommonOpen_7
+  - first:
+      213: -9175581080518592692
+    second: 7Day_ChestUncommonOpen_8
+  - first:
+      213: -4434584378637228233
+    second: 7Day_ChestUncommonOpen_9
+  - first:
+      213: 6181791149915219693
+    second: 7Day_ChestUncommonOpen_10
+  - first:
+      213: 1282951615154245263
+    second: 7Day_ChestUncommonOpen_11
+  - first:
+      213: 6575036384649953899
+    second: 7Day_ChestUncommonOpen_12
+  - first:
+      213: -2760050896681399630
+    second: 7Day_ChestUncommonOpen_13
+  - first:
+      213: -4316421897068019048
+    second: 7Day_ChestUncommonOpen_14
+  - first:
+      213: 2340231683634642354
+    second: 7Day_ChestUncommonOpen_15
+  - first:
+      213: -2864377890435890052
+    second: 7Day_ChestUncommonOpen_16
+  - first:
+      213: 3556416434698569231
+    second: 7Day_ChestUncommonOpen_17
+  - first:
+      213: -7999235050882426286
+    second: 7Day_ChestUncommonOpen_18
+  - first:
+      213: -3717426025926063705
+    second: 7Day_ChestUncommonOpen_19
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 399
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b1d9038d2c795eb0800000000000000
+      internalID: -4730613398662164039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 378
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2069b6b845da81890800000000000000
+      internalID: -7487043801875507710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 357
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcdc54be679c679e0800000000000000
+      internalID: -1623889103029940789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243c08f19b5fdd230800000000000000
+      internalID: 3665355847195738946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 315
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ef3e58a4ea9f100800000000000000
+      internalID: 142336498336005785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 294
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09db1003f7eed8a10800000000000000
+      internalID: 1913447646736006544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 273
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5991b3b39f94a7680800000000000000
+      internalID: -8756605190679094891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 252
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56470f1939a2c4de0800000000000000
+      internalID: -1347655375193607067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 231
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47f4ef1f99c9a080800000000000000
+      internalID: -9175581080518592692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737e4d8c0013572c0800000000000000
+      internalID: -4434584378637228233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 189
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de6a95e5c422ac550800000000000000
+      internalID: 6181791149915219693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 168
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e484552b5fdc110800000000000000
+      internalID: 1282951615154245263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 147
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b62445c71c83f3b50800000000000000
+      internalID: 6575036384649953899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 126
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba8e45355452b9d0800000000000000
+      internalID: -2760050896681399630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 105
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8920b8c672df814c0800000000000000
+      internalID: -4316421897068019048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd3823315c2a7020800000000000000
+      internalID: 2340231683634642354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74061a1c7faf38d0800000000000000
+      internalID: -2864377890435890052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 42
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06c19797edea5130800000000000000
+      internalID: 3556416434698569231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 21
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a9c4d5a120df090800000000000000
+      internalID: -7999235050882426286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7Day_ChestUncommonOpen_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a982e5a9bc096cc0800000000000000
+      internalID: -3717426025926063705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

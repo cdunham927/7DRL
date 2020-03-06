@@ -494,7 +494,9 @@ MonoBehaviour:
   doorParent: {fileID: 6832670395683406998}
   cleared: 0
   spawned: 0
-  banners: []
+  banners:
+  - {fileID: 6951727176071328967}
+  - {fileID: 7700860603596518497}
   enemySpawnParent: {fileID: 5161811194977488794}
   enemiesInRoom: []
   shopParent: {fileID: 6076712967247807354}

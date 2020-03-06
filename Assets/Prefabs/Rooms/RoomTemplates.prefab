@@ -156,11 +156,14 @@ MonoBehaviour:
   enemySpawnChance: 0.35
   maxEnemiesPerRoom: 3
   enemy:
-  - {fileID: 5544316268238207721, guid: 5a5554dc4a6b8f04294408e90324d6cc, type: 3}
+  - {fileID: 7138117259848312807, guid: d73b6d8bfdbecef4299f88613d9fbee8, type: 3}
   minibossEnemies:
   - {fileID: 1173648116781216563, guid: 58425dad0ac57fe41a7e5f9d336fb794, type: 3}
   chests:
   - {fileID: 8310253052945738106, guid: 9989197a2f1337d4bafe511800f38ddc, type: 3}
+  - {fileID: 6476716867602894362, guid: b009844375b8b8f4185151fe49fa78f6, type: 3}
+  - {fileID: 3658711052983240201, guid: 13b88b7dcc65b2240b9df406d5f6daa4, type: 3}
+  - {fileID: 4173796228872873777, guid: 85510fe4c0aa360489b3d35842f53951, type: 3}
   exit: {fileID: 6349985990172852304, guid: eb413eec9ee66494daaf0305bcc65cd9, type: 3}
 --- !u!114 &7322676219202678179
 MonoBehaviour:
@@ -182,6 +185,7 @@ MonoBehaviour:
   - {fileID: 1913629565903535396, guid: f25526baeeac1794196e89bae37674b1, type: 3}
   - {fileID: 5571930064019830752, guid: 427b78fd3ced2f54c9774e77b5003d15, type: 3}
   - {fileID: 6429409008525536416, guid: 3dbbc4a1d2e6e854f9a2e979ce5f3f60, type: 3}
+  - {fileID: 5160989960854912041, guid: 09021da65a1403643b129d3e62925e97, type: 3}
   commonItemsList: []
   uncommonItemsList: []
   rareItemsList: []

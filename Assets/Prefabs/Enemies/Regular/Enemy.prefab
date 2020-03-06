@@ -587,7 +587,7 @@ MonoBehaviour:
   goldDropAmt: 5
   poisonResistance: 25
   poisonTime: 8
-  burnResistance: 25
+  burnResistance: 21
   burnTime: 6
   slowResistance: 25
   slowTime: 7

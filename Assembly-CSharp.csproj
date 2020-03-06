@@ -62,26 +62,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AddRoom.cs" />
-    <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\ChestController.cs" />
-    <Compile Include="Assets\Scripts\ClosedRoomController.cs" />
-    <Compile Include="Assets\Scripts\Consumable.cs" />
-    <Compile Include="Assets\Scripts\Destroyer.cs" />
-    <Compile Include="Assets\Scripts\EnemyController.cs" />
-    <Compile Include="Assets\Scripts\Equipment.cs" />
-    <Compile Include="Assets\Scripts\ExitController.cs" />
-    <Compile Include="Assets\Scripts\GoldController.cs" />
-    <Compile Include="Assets\Scripts\Item.cs" />
-    <Compile Include="Assets\Scripts\ItemHolder.cs" />
-    <Compile Include="Assets\Scripts\KeyController.cs" />
-    <Compile Include="Assets\Scripts\Persistence.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\RoomSpawner.cs" />
-    <Compile Include="Assets\Scripts\RoomTemplates.cs" />
-    <Compile Include="Assets\Scripts\Shop.cs" />
-    <Compile Include="Assets\Scripts\Weapon.cs" />
-    <Compile Include="Assets\Scripts\WeaponController.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\EnemyProjectileController.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\FireLadController.cs" />
+    <Compile Include="Assets\Scripts\EtcScripts\ExitController.cs" />
+    <Compile Include="Assets\Scripts\EtcScripts\KeyController.cs" />
+    <Compile Include="Assets\Scripts\EtcScripts\Persistence.cs" />
+    <Compile Include="Assets\Scripts\LootScripts\ChestController.cs" />
+    <Compile Include="Assets\Scripts\LootScripts\Consumable.cs" />
+    <Compile Include="Assets\Scripts\LootScripts\Equipment.cs" />
+    <Compile Include="Assets\Scripts\LootScripts\GoldController.cs" />
+    <Compile Include="Assets\Scripts\LootScripts\Item.cs" />
+    <Compile Include="Assets\Scripts\LootScripts\ItemHolder.cs" />
+    <Compile Include="Assets\Scripts\LootScripts\Shop.cs" />
+    <Compile Include="Assets\Scripts\LootScripts\Weapon.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\ProjectileController.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\WeaponController.cs" />
+    <Compile Include="Assets\Scripts\RoomScripts\AddRoom.cs" />
+    <Compile Include="Assets\Scripts\RoomScripts\ClosedRoomController.cs" />
+    <Compile Include="Assets\Scripts\RoomScripts\Destroyer.cs" />
+    <Compile Include="Assets\Scripts\RoomScripts\RoomSpawner.cs" />
+    <Compile Include="Assets\Scripts\RoomScripts\RoomTemplates.cs" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Owner/Documents/SimpleDungeonGenerator/7DRL/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

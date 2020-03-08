@@ -5,7 +5,7 @@ using UnityEngine;
 public class AddRoom : MonoBehaviour
 {
     RoomTemplates templates;
-    public enum RoomTypes { enemy, loot, shop, bosskey, boss, player, len }
+    public enum RoomTypes { enemy, healing, loot, shop, bosskey, boss, player, len }
     [Header("Type of room")]
     public RoomTypes roomType = RoomTypes.enemy;
 
@@ -39,6 +39,9 @@ public class AddRoom : MonoBehaviour
 
     [Header("Loot room")]
     GameObject chest;
+
+    [Header("Healing room")]
+    GameObject healObj;
     
     private void Awake()
     {
@@ -75,12 +78,22 @@ public class AddRoom : MonoBehaviour
             //Check for other stuff in the room
             if (chest != null) chest.SetActive(false);
             shopParent.SetActive(false);
+            if (healObj != null) healObj.SetActive(false);
         }
+    }
+
+    void ShutGate()
+    {
+        templates.src.PlayOneShot(templates.gateShut);
     }
 
     public void SpawnInitial()
     {
-        if (roomType == RoomTypes.boss) foreach (Animator anim in doorAnim) anim.Play("Close");
+        if (roomType == RoomTypes.boss) foreach (Animator anim in doorAnim)
+            {
+                anim.Play("Close");
+                //Invoke("ShutGate", 0.5f);
+            }
         if (roomType == RoomTypes.loot)
         {
             int x = Random.Range(0, 100);
@@ -90,6 +103,7 @@ public class AddRoom : MonoBehaviour
             else chest = Instantiate(templates.chests[3], transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
         }
         if (roomType == RoomTypes.shop) shopParent.SetActive(true);
+        if (roomType == RoomTypes.healing) healObj = Instantiate(templates.healingAltar, transform.position, Quaternion.identity);
         
         //Spawn the carpet and change the banners
         //For if we want random carpet in the rooms
@@ -112,7 +126,11 @@ public class AddRoom : MonoBehaviour
         switch(roomType)
         {
             case (RoomTypes.enemy):
-                foreach (Animator anim in doorAnim) anim.Play("Close");
+                foreach (Animator anim in doorAnim)
+                {
+                    anim.Play("Close");
+                    Invoke("ShutGate", 0.3f);
+                }
                 numSpawned = 0;
                 for (int i = 0; i < enemySpawnParent.transform.childCount; i++)
                 {
@@ -137,7 +155,11 @@ public class AddRoom : MonoBehaviour
             case (RoomTypes.loot):
                 break;
             case (RoomTypes.bosskey):
-                foreach (Animator anim in doorAnim) anim.Play("Close");
+                foreach (Animator anim in doorAnim)
+                {
+                    anim.Play("Close");
+                    Invoke("ShutGate", 0.3f);
+                }
                 //Spawn miniboss
                 if (!spawned)
                 {
@@ -151,7 +173,11 @@ public class AddRoom : MonoBehaviour
             case (RoomTypes.shop):
                 break;
             case (RoomTypes.boss):
-                foreach (Animator anim in doorAnim) anim.Play("Close");
+                foreach (Animator anim in doorAnim)
+                {
+                    anim.Play("Close");
+                    Invoke("ShutGate", 0.3f);
+                }
                 //Spawn boss
                 if (!spawned)
                 {
@@ -163,10 +189,8 @@ public class AddRoom : MonoBehaviour
                 }
                 break;
             //case (RoomTypes.challenge):
-                //doorParent.SetActive(true);
                 //break;
             //case (RoomTypes.healing):
-                //doorParent.SetActive(true);
                 //break;
             case (RoomTypes.player):
                 //PlayerController.player.transform.position = transform.position;
@@ -194,6 +218,8 @@ public class AddRoom : MonoBehaviour
                 templates.bossRoom.Unlock();
                 break;
             case (RoomTypes.boss):
+                //Play fanfare
+                templates.src.PlayOneShot(templates.fanfare);
                 //Boss rooms should spawn exit to next floor
                 //Should probably have a gameobject that tells it where to spawn
                 Instantiate(templates.exit, transform.position + new Vector3(0, 2f, 0), transform.rotation);

@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6199950189564728167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.1215781, y: -0.15019251, z: -1.7712642}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 4552429883129506242}
   m_Father: {fileID: 0}
@@ -49,6 +49,7 @@ MonoBehaviour:
   itemName: Lightning Sword
   itemDescription: Deals minor lightning damage
   itemText: {fileID: 0}
+  textImg: {fileID: 0}
   rarity: 30
   buying: 0
   cost: 1
@@ -96,8 +97,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: b237127c666b49e4485b35bf3db837be, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 712035800519618848, guid: a06e398e7a6091944aed355adb8b0d70, type: 3}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -124,7 +125,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 0.1, y: 0.27}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

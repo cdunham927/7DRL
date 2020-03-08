@@ -37,15 +37,18 @@ public class FireLadController : EnemyController
 
     public override void Attack()
     {
+        base.Attack();
+
         //anim.SetBool("attacking", true);
         Vector3 dir = PlayerController.player.transform.position - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + 90;
         Quaternion rot = Quaternion.AngleAxis(angle, Vector3.forward);
 
         //Shoot thing
         EnemyProjectileController proj = Instantiate(projectile, transform.position, rot).GetComponent<EnemyProjectileController>();
         proj.effect = effect;
         proj.atk = atk;
+        proj.pot = potency;
 
         attackCools = timeBetweenAttacks;
         ChangeState(states.chase);

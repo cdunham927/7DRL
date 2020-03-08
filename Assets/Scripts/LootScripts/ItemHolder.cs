@@ -28,12 +28,20 @@ public class ItemHolder : MonoBehaviour
         legendaryWeaponsList = new List<Item>();
 
         //Add the items to lists respective to their rarity
+        AddAllToLists();
+    }
+
+    void AddAllToLists()
+    {
+        //Add the items to lists respective to their rarity
         foreach (Item it in allItemsList)
         {
             if (it.rarity == Item.Rarity.common) commonItemsList.Add(it);
             else if (it.rarity == Item.Rarity.uncommon) uncommonItemsList.Add(it);
             else if (it.rarity == Item.Rarity.rare) rareItemsList.Add(it);
             else if (it.rarity == Item.Rarity.legendary) legendaryItemsList.Add(it);
+
+            if (it.GetComponent<Weapon>() == null) continue;
 
             if (it.GetComponent<Weapon>() != null)
             {
@@ -78,20 +86,20 @@ public class ItemHolder : MonoBehaviour
         int ind;
         if (rarity == Item.Rarity.common)
         {
-            ind = Random.Range(0, commonItemsList.Count - 1);
+            ind = Random.Range(0, commonWeaponsList.Count - 1);
             return commonWeaponsList[ind];
         }
         else if (rarity == Item.Rarity.uncommon)
         {
-            ind = Random.Range(0, uncommonItemsList.Count - 1);
+            ind = Random.Range(0, uncommonWeaponsList.Count - 1);
             return uncommonWeaponsList[ind];
         }
         else if (rarity == Item.Rarity.rare)
         {
-            ind = Random.Range(0, rareItemsList.Count - 1);
+            ind = Random.Range(0, rareWeaponsList.Count - 1);
             return rareWeaponsList[ind];
         }
-        ind = Random.Range(0, legendaryItemsList.Count - 1);
+        ind = Random.Range(0, legendaryWeaponsList.Count - 1);
         return legendaryWeaponsList[ind];
     }
 

@@ -22,7 +22,13 @@ public class Weapon : Item
 
     public override void Use() { }
 
-    public override void SetText() { tString = (itemName + "\n" + itemDescription + "\nAttack - " + atk + "\tPotency - " + potency + "\nCost - " + cost.ToString()); }
+    public override void SetText()
+    {
+        if (!buying) tString = (itemName + "\n" + itemDescription + "\nAttack - " + atk + "\tPotency - " + potency);
+        else tString = (itemName + "\n" + itemDescription + "\nAttack - " + atk + "\tPotency - " + potency + "\nCost - " + cost.ToString());
+
+        base.SetText();
+    }
 
     public override void PickupItem()
     {

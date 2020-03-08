@@ -8,8 +8,10 @@ public class EnemyProjectileController : MonoBehaviour
     Rigidbody2D bod;
 
     public float atk = 1;
+    [HideInInspector]
     public Weapon.weaponEffect effect;
-    public float pot = 0;
+    [HideInInspector]
+    public float pot;
 
     private void Awake()
     {
@@ -18,7 +20,7 @@ public class EnemyProjectileController : MonoBehaviour
 
     private void OnEnable()
     {
-        bod.AddForce(transform.up * spd);
+        bod.AddForce(-transform.up * spd);
         Invoke("Disable", 2f);
     }
 
@@ -26,7 +28,12 @@ public class EnemyProjectileController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerController.player.TakeDamage(1, effect);
+            PlayerController.player.TakeDamage(atk, effect, pot);
+            Invoke("Disable", 0.001f);
+        }
+
+        if (collision.CompareTag("Wall"))
+        {
             Invoke("Disable", 0.001f);
         }
     }

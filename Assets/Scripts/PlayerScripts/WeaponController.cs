@@ -8,8 +8,10 @@ public class WeaponController : MonoBehaviour
     public float dmgModifier;
     Animator anim;
     Animator playerAnim;
+    [SerializeField]
     float cools = 0f;
     public float potencyMod;
+    public float atkMod = 0.20f;
 
     ItemHolder itemHolder;
     [HideInInspector]
@@ -17,27 +19,32 @@ public class WeaponController : MonoBehaviour
 
     public GameObject arrow;
 
+    //Sprite renderer
+    SpriteRenderer weaponRend;
+    SpriteRenderer weapR;
+
     //Sounds
     AudioSource src;
     public AudioClip swing;
     public AudioClip stab;
+    public AudioClip shoot;
+
+    bool canDamage = true;
 
     void Awake()
     {
-        playerAnim = PlayerController.player.GetComponent<Animator>();
+        weaponRend = GetComponent<SpriteRenderer>();
+        playerAnim = transform.parent.GetComponent<Animator>();
         anim = GetComponent<Animator>();
         src = GetComponent<AudioSource>();
-    }
-
-    private void OnEnable()
-    {
-        PlayerController.player.ResetEverything();
     }
 
     void Update()
     {
         if (Input.GetMouseButton(0) && cools <= 0f)
         {
+            cools = curWeapon.cooldown;
+            //Debug.Log("Attacking");
             switch (curWeapon.type)
             {
                 case (Weapon.weaponTypes.sword):
@@ -68,6 +75,8 @@ public class WeaponController : MonoBehaviour
             }
         }
 
+        if (curWeapon != null) anim.SetInteger("Weapon", (int)curWeapon.type);
+
         if (cools > 0) cools -= Time.deltaTime;
 
         if (cools <= 0) attacking = false;
@@ -97,6 +106,9 @@ public class WeaponController : MonoBehaviour
         curWeapon = weap;
         curWeapon.gameObject.SetActive(false);
         PlayerController.player.UpdateUI(0);
+        weapR = curWeapon.GetComponent<SpriteRenderer>();
+        weaponRend.color = weapR.color;
+
         if (PlayerController.player.curEquip != null)
         {
             if (PlayerController.player.curEquip.type == Equipment.equipmentTypes.amulets)
@@ -105,6 +117,7 @@ public class WeaponController : MonoBehaviour
             }
         }
     }
+
     void ResetAttacking()
     {
         playerAnim.SetBool("Attacking", false);
@@ -112,21 +125,26 @@ public class WeaponController : MonoBehaviour
 
     void Sword()
     {
+        src.volume = 0.45f;
         src.PlayOneShot(swing);
         anim.Play("Sword");
-        cools = curWeapon.cooldown;
         Invoke("ResetAttacking", 0.25f);
     }
 
     void Dagger()
     {
+        src.volume = 0.6f;
         src.PlayOneShot(stab);
-        cools = curWeapon.cooldown;
+        anim.Play("Dagger");
+        Invoke("ResetAttacking", 0.25f);
     }
 
     void Spear()
     {
-
+        src.volume = 0.8f;
+        src.PlayOneShot(stab);
+        anim.Play("Spear");
+        Invoke("ResetAttacking", 0.25f);
     }
 
     void Axe()
@@ -136,20 +154,31 @@ public class WeaponController : MonoBehaviour
 
     void Bow()
     {
+        src.volume = 0.6f;
+        src.PlayOneShot(shoot);
         //anim.Play("Bow");
-        Vector3 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-
+        //Set variables
         ProjectileController arr = Instantiate(arrow, transform.position, transform.rotation).GetComponent<ProjectileController>();
-        cools = curWeapon.cooldown;
+        arr.GetComponent<SpriteRenderer>().color = weaponRend.color;
+        arr.effect = curWeapon.effect;
+        arr.pot = curWeapon.potency;
+        arr.atkMod = atkMod;
+        arr.atk = curWeapon.atk;
+        arr.dmgModifier = dmgModifier;
+
         Invoke("ResetAttacking", 0.25f);
+    }
+
+    private void CanDamage()
+    {
+        canDamage = true;
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Enemy"))
         {
-            col.GetComponent<EnemyController>().TakeDamage(curWeapon.effect, curWeapon.potency, curWeapon.atk, dmgModifier);
+            //col.GetComponent<EnemyController>().TakeDamage(curWeapon.effect, curWeapon.potency, curWeapon.atk + (curWeapon.atk * atkMod), dmgModifier);
         }
     }
 
@@ -157,7 +186,7 @@ public class WeaponController : MonoBehaviour
     {
         if (col.CompareTag("Enemy"))
         {
-            col.GetComponent<EnemyController>().TakeDamage(curWeapon.effect, curWeapon.potency, curWeapon.atk, dmgModifier);
+            col.GetComponent<EnemyController>().TakeDamage(curWeapon.effect, curWeapon.potency, curWeapon.atk + (curWeapon.atk * atkMod), dmgModifier);
         }
     }
 }

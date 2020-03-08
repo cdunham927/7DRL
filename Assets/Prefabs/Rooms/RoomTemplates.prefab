@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 87185603397389055}
   - component: {fileID: 87185603397389024}
   - component: {fileID: 7322676219202678179}
+  - component: {fileID: 4856656930365346626}
   m_Layer: 0
   m_Name: RoomTemplates
   m_TagString: Rooms
@@ -131,10 +132,12 @@ MonoBehaviour:
   waitTime: 3
   spawnedBoss: 0
   boss:
-  - {fileID: 3872193894618934149, guid: 80f263ac968f5254e88ddaba61e7b36c, type: 3}
+  - {fileID: 7138117259848312807, guid: d73b6d8bfdbecef4299f88613d9fbee8, type: 3}
+  - {fileID: 2252770282643833405, guid: e73bd8f09b0e2e94b9b553df675a986d, type: 3}
   player: {fileID: 1780368358873162405, guid: 947282fa24917324081c419ee33b6892, type: 3}
   bannerSprites:
   - {fileID: 21300000, guid: 89a787ae06eceed40ad91c73620f11a8, type: 3}
+  - {fileID: 21300000, guid: 05a8b32de66e6d142a771dd21dee8505, type: 3}
   - {fileID: 21300000, guid: 4a70bb264faaa164aafe589f08fe24e0, type: 3}
   - {fileID: 21300000, guid: 837e558198436fe44ab32d9bf070631e, type: 3}
   - {fileID: 21300000, guid: fd8ebdf304551c14e95eaa7333aa289e, type: 3}
@@ -142,6 +145,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 54ae270c561388a41a668c79557bbcd9, type: 3}
   roomSprites:
   - {fileID: 8272357416251665504, guid: eafc0a496f4d06f4babcdfc128134882, type: 3}
+  - {fileID: 1020918295192261814, guid: e636124f19953784fbe6b1db5d67066d, type: 3}
   - {fileID: 1155059740300851660, guid: 34ee512a39bb6314eb1e56d976889c5f, type: 3}
   - {fileID: 4330880102461639289, guid: cd7004b686ef35e4184e27a4d0cb3df8, type: 3}
   - {fileID: 5461072296717766383, guid: e4c9c7abdb2b01f46beb600bf9cca28a, type: 3}
@@ -149,22 +153,33 @@ MonoBehaviour:
   - {fileID: 1941607666953956210, guid: 4057f4056d38b2f43b5e593e421513ca, type: 3}
   chancePerRoom:
   - 0.12
-  - 0.494
-  - 0.355
-  maxOfRoomtype: 320000000100000001000000010000000100000001000000
+  - 0.35
+  - 0.4
+  - 0.6
+  maxOfRoomtype: 32000000010000000100000001000000010000000100000001000000
   bossRoom: {fileID: 0}
   enemySpawnChance: 0.35
   maxEnemiesPerRoom: 3
   enemy:
-  - {fileID: 7138117259848312807, guid: d73b6d8bfdbecef4299f88613d9fbee8, type: 3}
+  - {fileID: 805772955244172199, guid: aeec667c87ee92d4698806e5a035c378, type: 3}
+  - {fileID: 7576866383011580550, guid: 2635fc52d7d2e7046b29bb983af3add7, type: 3}
+  - {fileID: 1070693737092550937, guid: 5e70a0d7959671b4d92da167b394debf, type: 3}
+  - {fileID: 2240913555926547965, guid: 86727dc0aa1bba24b929ec1853acd358, type: 3}
+  - {fileID: 6700771702572199312, guid: 3477feabd86b7794b9cdc367f611f7c7, type: 3}
   minibossEnemies:
-  - {fileID: 1173648116781216563, guid: 58425dad0ac57fe41a7e5f9d336fb794, type: 3}
+  - {fileID: 1442760501240126345, guid: 33c75d61e6c77484c94dfd327a7102e7, type: 3}
+  - {fileID: 4359966737806871428, guid: f8e78399281c8494e88f5d6eef255aa3, type: 3}
   chests:
   - {fileID: 8310253052945738106, guid: 9989197a2f1337d4bafe511800f38ddc, type: 3}
   - {fileID: 6476716867602894362, guid: b009844375b8b8f4185151fe49fa78f6, type: 3}
   - {fileID: 3658711052983240201, guid: 13b88b7dcc65b2240b9df406d5f6daa4, type: 3}
   - {fileID: 4173796228872873777, guid: 85510fe4c0aa360489b3d35842f53951, type: 3}
   exit: {fileID: 6349985990172852304, guid: eb413eec9ee66494daaf0305bcc65cd9, type: 3}
+  healingAltar: {fileID: 1116264775804666620, guid: f64be69c33f377a4c8d996249f4605a2,
+    type: 3}
+  src: {fileID: 0}
+  gateShut: {fileID: 8300000, guid: d50141995799da049963abc7ad89f0ac, type: 3}
+  fanfare: {fileID: 8300000, guid: 7ee98de2eeddd0046b8edf2a99a6d075, type: 3}
 --- !u!114 &7322676219202678179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,14 +193,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allItemsList:
+  - {fileID: 8651019156824261386, guid: de42c6a5d049d1b4597f59f6ce3c867d, type: 3}
+  - {fileID: 6214441685679024769, guid: 10cf0064dcbcfb54b818c0661d955fd4, type: 3}
+  - {fileID: 467853216240232165, guid: 96317c048340d1246987b39cf5a03d9c, type: 3}
+  - {fileID: 8359760761486850823, guid: dc4d916f1f45b4544953bf2ec6b06259, type: 3}
+  - {fileID: 7249738093176034581, guid: 33a7db37fd12b684bb512e462b751af7, type: 3}
+  - {fileID: 6719583286340308505, guid: 39348a69d5ac06048a50d09927509a44, type: 3}
+  - {fileID: 1463547414782187245, guid: 36ae92d785e503b44b19d6527446ace6, type: 3}
+  - {fileID: 4205436921515139684, guid: 5c81fe015b3f8ca4184c75c14db24fae, type: 3}
   - {fileID: 5160989960854912041, guid: 09021da65a1403643b129d3e62925e97, type: 3}
   - {fileID: 4319010624425170992, guid: 5fab7e1daefaa7c428d81c15165c662e, type: 3}
   - {fileID: 1995066761660368925, guid: 35ffd12f886c8894280db13383b71b13, type: 3}
+  - {fileID: 6429409008525536416, guid: 3dbbc4a1d2e6e854f9a2e979ce5f3f60, type: 3}
   - {fileID: 6199950189564728160, guid: 4691af6377cc430498d3049fe68e338f, type: 3}
   - {fileID: 1913629565903535396, guid: f25526baeeac1794196e89bae37674b1, type: 3}
   - {fileID: 5571930064019830752, guid: 427b78fd3ced2f54c9774e77b5003d15, type: 3}
-  - {fileID: 6429409008525536416, guid: 3dbbc4a1d2e6e854f9a2e979ce5f3f60, type: 3}
-  - {fileID: 5160989960854912041, guid: 09021da65a1403643b129d3e62925e97, type: 3}
   commonItemsList: []
   uncommonItemsList: []
   rareItemsList: []
@@ -194,3 +216,99 @@ MonoBehaviour:
   uncommonWeaponsList: []
   rareWeaponsList: []
   legendaryWeaponsList: []
+--- !u!82 &4856656930365346626
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87185603397389025}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.4
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

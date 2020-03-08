@@ -36,7 +36,7 @@ public class EnemyController : MonoBehaviour
     public float timeBetweenAttacks = 0.7f;
 
     //Animation
-    protected Animator anim;
+    public Animator anim;
 
     //Resistances to various status effects
     [Header("Enemy resistances")]
@@ -96,10 +96,16 @@ public class EnemyController : MonoBehaviour
 
     //Components
     protected Rigidbody2D bod;
+    SpriteRenderer rend;
+
+    //Audio
+    protected AudioSource src;
+    public AudioClip clip;
 
     void OnEnable()
     {
-        anim = GetComponent<Animator>();
+        src = GetComponent<AudioSource>();
+        if (anim == null) anim = GetComponent<Animator>();
         bod = GetComponent<Rigidbody2D>();
         SetStats();
     }
@@ -208,7 +214,7 @@ public class EnemyController : MonoBehaviour
         }
 
         //Face left
-        //anim.SetInteger("Dir", 0);
+        anim.SetInteger("Dir", (PlayerController.player.transform.position.x > transform.position.x) ? 1 : 0);
 
         //For testing in the editor
         if (Application.isEditor)
@@ -228,7 +234,6 @@ public class EnemyController : MonoBehaviour
                 case (Weapon.weaponEffect.none):
                     hp -= CalculateDamage(dmg, mod);
                     if (hp <= 0) Die();
-                    cools = iframes;
                     break;
                 case (Weapon.weaponEffect.poison):
                     hp -= CalculateDamage(dmg, mod);
@@ -239,35 +244,32 @@ public class EnemyController : MonoBehaviour
                         poisonDmgCools = timeBetweenPoisonDamage;
                         poisonCools = poisonTime;
                     }
-                    cools = iframes;
                     break;
                 case (Weapon.weaponEffect.burn):
                     hp -= CalculateDamage(dmg, mod);
                     if (hp <= 0) Die();
                     curBurn += potency;
-                    Debug.Log(curBurn);
+                    //Debug.Log(curBurn);
                     if (curBurn >= burnResistance && burnCools <= 0)
                     {
                         burnDmgCools = timeBetweenBurnDamage;
                         burnCools = burnTime;
                     }
-                    cools = iframes;
                     break;
                 case (Weapon.weaponEffect.slow):
                     hp -= CalculateDamage(dmg, mod);
                     if (hp <= 0) Die();
                     curSlow += potency;
                     if (curSlow >= slowResistance && slowCools <= 0) slowCools = slowTime;
-                    cools = iframes;
                     break;
                 case (Weapon.weaponEffect.paralyze):
                     hp -= CalculateDamage(dmg, mod);
                     if (hp <= 0) Die();
                     curParalyze += potency;
                     if (curParalyze >= paralyzeResistance && paralyzeCools <= 0) paralyzeCools = paralyzeTime;
-                    cools = iframes;
                     break;
             }
+            cools = iframes;
         }
     }
 
@@ -282,7 +284,10 @@ public class EnemyController : MonoBehaviour
 
     public virtual void Chase() { }
 
-    public virtual void Attack() { }
+    public virtual void Attack()
+    {
+        src.PlayOneShot(clip);
+    }
 
     public void ChangeState(states newState)
     {
@@ -312,7 +317,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerController.player.TakeDamage(atk, effect, potency);
+            //PlayerController.player.TakeDamage(atk, effect, potency);
         }
     }
 }

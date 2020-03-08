@@ -33,9 +33,12 @@ public class PlayerController : MonoBehaviour
     public float defMod = 0;
     //Spd
     public float spd;
+    float curSpd;
+    public float slowSpd;
     [HideInInspector]
     public float spdMod;
-    float gold = 0;
+    [HideInInspector]
+    public float gold = 0;
     [HideInInspector]
     public float goldMod;
 
@@ -53,6 +56,8 @@ public class PlayerController : MonoBehaviour
     //Items UI
     public Image weaponImg;
     public Image equipImg;
+    RectTransform weapRect;
+    RectTransform equipRect;
     //public Image consumeImg;
     public Image weaponTypeImg;
     public Image equipTypeImg;
@@ -120,7 +125,6 @@ public class PlayerController : MonoBehaviour
     public enum character { knight, bandit, lizard, rogue, wolf, len }
     [SerializeField]
     int ch = 0;
-    int dir;
 
     void Awake()
     {
@@ -132,12 +136,18 @@ public class PlayerController : MonoBehaviour
         else Destroy(gameObject);
 
         anim = GetComponent<Animator>();
-        //src = GetComponent<AudioSource>();
+        src = GetComponent<AudioSource>();
+
+        //Get UI references
+        weapRect = weaponImg.GetComponent<RectTransform>();
+        equipRect = equipImg.GetComponent<RectTransform>();
 
         hp = maxHp;
+        curSpd = spd;
         bod = GetComponent<Rigidbody2D>();
         weapon = GetComponentInChildren<WeaponController>();
         weaponRend = weapon.GetComponent<SpriteRenderer>();
+        Invoke("ResetEverything", 0.01f);
     }
 
     public void ResetEverything()
@@ -148,7 +158,7 @@ public class PlayerController : MonoBehaviour
         weapon.SwitchWeapon(weap);
         PlayerController.player.UpdateUI(0);
 
-        //ch = Random.Range(0, (int)character.len);
+        ch = Random.Range(0, (int)character.len - 1);
 
         anim.SetInteger("Char", ch);
     }
@@ -159,7 +169,7 @@ public class PlayerController : MonoBehaviour
 
         if (inp.magnitude != 0)
         {
-            //bod.AddForce(new Vector2(inp.x * spd * Time.deltaTime, inp.y * spd * Time.deltaTime));
+            bod.AddForce(new Vector2(inp.x * spd * Time.deltaTime, inp.y * spd * Time.deltaTime));
         }
 
         if (!weapon.attacking)
@@ -168,26 +178,72 @@ public class PlayerController : MonoBehaviour
             {
                 moving = true;
                 transform.rotation = Quaternion.Euler(0, 0, (inp.y > 0) ? 180 : 0);
-                bod.AddForce(new Vector2(0f, inp.y * spd * Time.deltaTime));
-                anim.SetInteger("Dir", (inp.y > 0) ? 1 : -1);
+                //bod.AddForce(new Vector2(0f, inp.y * curSpd * Time.deltaTime));
             }
-            else if (inp.x != 0)
+            if (inp.x != 0)
             {
                 moving = true;
                 transform.rotation = Quaternion.Euler(0, 0, (inp.x > 0) ? 90 : -90);
-                bod.AddForce(new Vector2(inp.x * spd * Time.deltaTime, 0f));
-                anim.SetInteger("Dir", (inp.x > 0) ? 1 : -1);
+                //bod.AddForce(new Vector2(inp.x * curSpd * Time.deltaTime, 0f));
             }
-            else moving = false;
+            //else moving = false;
         }
 
-        anim.SetInteger("Weapon", (int)weapon.curWeapon.type);
+        if (weapon.curWeapon != null) anim.SetInteger("Weapon", (int)weapon.curWeapon.type);
 
         if (hpBar != null) hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount, hp / maxHp, lerpSpd * Time.deltaTime);
         if (floorText != null) floorText.text = "Floor: " + floor.ToString();
         if (goldText != null) goldText.text = gold.ToString();
 
         if (cools > 0) cools -= Time.deltaTime;
+
+        //Do the status effects
+        //Poison hurts the enemy over time
+        if (poisonCools > 0)
+        {
+            poisonCools -= Time.deltaTime;
+            poisonDmgCools -= Time.deltaTime;
+            if (poisonDmgCools <= 0f)
+            {
+                poisonDmgCools = timeBetweenPoisonDamage;
+                hp -= poisonDamage;
+                if (hp <= 0) Die();
+            }
+        }
+        //Burn hurts the enemy over time and lowers their attack
+        if (burnCools > 0)
+        {
+            burnCools -= Time.deltaTime;
+            burnDmgCools -= Time.deltaTime;
+            weapon.atkMod = 2;
+            if (burnDmgCools <= 0f)
+            {
+                burnDmgCools = timeBetweenBurnDamage;
+                hp -= burnDamage;
+                if (hp <= 0) Die();
+            }
+        }
+        //Slow slows down the enemy
+        if (slowCools > 0)
+        {
+            slowCools -= Time.deltaTime;
+            curSpd = slowSpd;
+        }
+        //Paralyze stops the enemy and prevents them from attacking
+        if (paralyzeCools > 0)
+        {
+            paralyzeCools -= Time.deltaTime;
+            curSpd = 0f;
+        }
+
+        //Reset status effects
+        if (burnCools <= 0f) weapon.atkMod = 0;
+        if (slowCools <= 0f) curSpd = spd;
+        if (paralyzeCools <= 0f)
+        {
+            if (slowCools <= 0) curSpd = spd;
+            else curSpd = slowSpd;
+        }
 
         statusImages[0].gameObject.SetActive((poisonCools > 0) ? true : false);
         statusImages[1].gameObject.SetActive((burnCools > 0) ? true : false);
@@ -206,6 +262,14 @@ public class PlayerController : MonoBehaviour
             {
                 gold += 1;
             }
+
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                if (ch != 4) ch++;
+                else ch = 0;
+
+                anim.SetInteger("Char", ch);
+            }
         }
     }
 
@@ -214,8 +278,22 @@ public class PlayerController : MonoBehaviour
         if (n == 0)
         {
             weaponImg.sprite = weapon.curWeapon.GetComponent<SpriteRenderer>().sprite;
+            //Change size of weapon UI box
+            switch (weapon.curWeapon.type)
+            {
+                case (Weapon.weaponTypes.sword):
+                    weapRect.sizeDelta = new Vector2(15f, 35f);
+                    break;
+                case (Weapon.weaponTypes.dagger):
+                    weapRect.sizeDelta = new Vector2(10f, 30f);
+                    break;
+                case (Weapon.weaponTypes.bow):
+                    weapRect.sizeDelta = new Vector2(17.5f, 32.5f);
+                    break;
+            }
+
             //Set weapon effect UI sprite
-            switch(weapon.curWeapon.effect)
+            switch (weapon.curWeapon.effect)
             {
                 case (Weapon.weaponEffect.none):
                     weaponTypeImg.sprite = effectSprites[0];
@@ -237,6 +315,21 @@ public class PlayerController : MonoBehaviour
         if (n == 1)
         {
             equipImg.sprite = curEquip.GetComponent<SpriteRenderer>().sprite;
+
+            //Change size of equipment UI box
+            switch (curEquip.type)
+            {
+                case (Equipment.equipmentTypes.amulets):
+                    equipRect.sizeDelta = new Vector2(50, 50);
+                    break;
+                case (Equipment.equipmentTypes.boots):
+                    equipRect.sizeDelta = new Vector2(40, 40);
+                    break;
+                case (Equipment.equipmentTypes.armor):
+                    equipRect.sizeDelta = new Vector2(40, 40);
+                    break;
+            }
+
             //Set weapon effect UI sprite
             switch (curEquip.effect)
             {
@@ -327,7 +420,6 @@ public class PlayerController : MonoBehaviour
                 case (Weapon.weaponEffect.none):
                 hp -= CalculateDamage(dmg, defMod);
                 if (hp <= 0) Die();
-                cools = iframes;
                 break;
             case (Weapon.weaponEffect.poison):
                 hp -= CalculateDamage(dmg, defMod);
@@ -338,33 +430,30 @@ public class PlayerController : MonoBehaviour
                     poisonDmgCools = timeBetweenPoisonDamage;
                     poisonCools = poisonTime;
                 }
-                cools = iframes;
                 break;
             case (Weapon.weaponEffect.burn):
+                //Debug.Log("Taking fire damage");
                 hp -= CalculateDamage(dmg, defMod);
                 if (hp <= 0) Die();
                 curBurn += pot;
-                Debug.Log(curBurn);
+                //Debug.Log(curBurn);
                 if (curBurn >= burnResistance && burnCools <= 0)
                 {
                     burnDmgCools = timeBetweenBurnDamage;
                     burnCools = burnTime;
                 }
-                cools = iframes;
                 break;
             case (Weapon.weaponEffect.slow):
                 hp -= CalculateDamage(dmg, defMod);
                 if (hp <= 0) Die();
                 curSlow += pot;
                 if (curSlow >= slowResistance && slowCools <= 0) slowCools = slowTime;
-                cools = iframes;
                 break;
             case (Weapon.weaponEffect.paralyze):
                 hp -= CalculateDamage(dmg, defMod);
                 if (hp <= 0) Die();
                 curParalyze += pot;
                 if (curParalyze >= paralyzeResistance && paralyzeCools <= 0) paralyzeCools = paralyzeTime;
-                cools = iframes;
                 break;
             }
         }

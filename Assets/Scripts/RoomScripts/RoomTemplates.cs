@@ -69,8 +69,18 @@ public class RoomTemplates : MonoBehaviour
     [Header("For leaving the floor")]
     public GameObject exit;
 
+    [Header("Healing room")]
+    public GameObject healingAltar;
+
+    //Audio
+    [HideInInspector]
+    public AudioSource src;
+    public AudioClip gateShut;
+    public AudioClip fanfare;
+
     private void Awake()
     {
+        src = GetComponent<AudioSource>();
         numOfRoomtype = new int[(int)AddRoom.RoomTypes.len];
         cam = FindObjectOfType<CameraController>();
         if (FindObjectOfType<PlayerController>() == null) Invoke("SpawnPlayer", 0.5f);

@@ -63,8 +63,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\EnemyScripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\EnemyMeleeController.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\EnemyProjectileController.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\FireLadController.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\MeleeEnemyController.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\RangedEnemyController.cs" />
     <Compile Include="Assets\Scripts\EtcScripts\ExitController.cs" />
     <Compile Include="Assets\Scripts\EtcScripts\KeyController.cs" />
     <Compile Include="Assets\Scripts\EtcScripts\Persistence.cs" />
@@ -83,6 +86,7 @@
     <Compile Include="Assets\Scripts\RoomScripts\AddRoom.cs" />
     <Compile Include="Assets\Scripts\RoomScripts\ClosedRoomController.cs" />
     <Compile Include="Assets\Scripts\RoomScripts\Destroyer.cs" />
+    <Compile Include="Assets\Scripts\RoomScripts\HealingFountain.cs" />
     <Compile Include="Assets\Scripts\RoomScripts\RoomSpawner.cs" />
     <Compile Include="Assets\Scripts\RoomScripts\RoomTemplates.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

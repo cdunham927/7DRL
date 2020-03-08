@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
         {
             targ1 = template.rooms[0].transform;
             targ2 = template.rooms[template.rooms.Count - 1].transform;
-            transform.position = Vector3.Lerp(transform.position, new Vector3((targ1.position.x + targ2.position.x) / 2f, (targ1.position.y + targ2.position.y / 2f), -10f), lerpSpd * Time.deltaTime);
+            //transform.position = Vector3.Lerp(transform.position, new Vector3((targ1.position.x + targ2.position.x) / 2f, (targ1.position.y + targ2.position.y / 2f), -10f), lerpSpd * Time.deltaTime);
         }
 
         if (followPlayer)

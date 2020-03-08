@@ -13,7 +13,13 @@ public class Equipment : Item
 
     Weapon weap;
 
-    public override void SetText() { tString = (itemName + "\n" + itemDescription + "\n" + "Cost - " + cost.ToString()); }
+    public override void SetText()
+    {
+        if (!buying) tString = (itemName + "\n" + itemDescription);
+        else tString = (itemName + "\n" + itemDescription + "\n" + "Cost - " + cost.ToString());
+
+        base.SetText();
+    }
 
     public override void Use()
     {
@@ -45,6 +51,11 @@ public class Equipment : Item
 
     public override void PickupItem()
     {
-        PlayerController.player.SwitchEquipment(this);
+        if (!buying) PlayerController.player.SwitchEquipment(this);
+
+        if (buying && PlayerController.player.gold > cost)
+        {
+
+        }
     }
 }

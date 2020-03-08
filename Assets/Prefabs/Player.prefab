@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 702793405}
   - component: {fileID: 702793406}
   - component: {fileID: 4000027084228413500}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702793401}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.225, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.92387956, w: 0.38268343}
+  m_LocalPosition: {x: 0.195, y: -0.02, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1780368358873162407}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135}
 --- !u!95 &702793404
 Animator:
   serializedVersion: 3
@@ -71,7 +71,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 0.1, y: 0.27}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -94,11 +94,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curWeapon: {fileID: 0}
   dmgModifier: 0
+  cools: 0
   potencyMod: 0
+  atkMod: 0.2
   attacking: 0
-  arrow: {fileID: 0}
+  arrow: {fileID: 2124856815376047300, guid: dfb36ca2a5dae804881932e78bebb5d2, type: 3}
   swing: {fileID: 8300000, guid: ae75d5972b82c7a4392526b1a7885784, type: 3}
-  stab: {fileID: 0}
+  stab: {fileID: 8300000, guid: a70be42f65f5b7540bae12dd86a4fc6f, type: 3}
+  shoot: {fileID: 8300000, guid: 9bc78051ac9aad24ab36be37d0811abd, type: 3}
 --- !u!212 &702793406
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -137,8 +140,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b237127c666b49e4485b35bf3db837be, type: 3}
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 712035800519618848, guid: a06e398e7a6091944aed355adb8b0d70, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -161,7 +164,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -260,7 +263,7 @@ GameObject:
   - component: {fileID: 7138229443505218211}
   - component: {fileID: 406318877116304707}
   - component: {fileID: 3626198736696620345}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -372,7 +375,9 @@ MonoBehaviour:
   healingMod: 0
   defMod: 0
   spd: 1000
+  slowSpd: 0
   spdMod: 0
+  gold: 0
   goldMod: 0
   hpBar: {fileID: 0}
   lerpSpd: 10
@@ -389,7 +394,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   effectSprites:
-  - {fileID: 21300000, guid: 99f19a227bba1de439d2f614ce3ec448, type: 3}
+  - {fileID: 21300000, guid: 464e347d9a9f6c8419e979b23e7ff61c, type: 3}
   - {fileID: 21300000, guid: d112851f88184ce46aa0b0f47507f07c, type: 3}
   - {fileID: 21300000, guid: 786728dfe1ce3cd47a290bb3b1e3c83a, type: 3}
   - {fileID: 21300000, guid: fc867692d3470f747b99e1c7cf7feffc, type: 3}
@@ -400,14 +405,14 @@ MonoBehaviour:
   - {x: 0, y: -0.225, z: 0}
   - {x: 0.225, y: 0, z: 0}
   - {x: -0.225, y: 0, z: 0}
-  iframes: 0.2
-  poisonResistance: 0
+  iframes: 0.75
+  poisonResistance: 20
   poisonTime: 8
-  burnResistance: 0
+  burnResistance: 20
   burnTime: 6
-  slowResistance: 0
+  slowResistance: 20
   slowTime: 7
-  paralyzeResistance: 0
+  paralyzeResistance: 20
   paralyzeTime: 5
   timeBetweenPoisonDamage: 0.5
   timeBetweenBurnDamage: 0.5
@@ -415,7 +420,7 @@ MonoBehaviour:
   poisonDamage: 3
   burnDamage: 2
   hit: {fileID: 0}
-  ch: 1
+  ch: 4
 --- !u!95 &7138229443505218211
 Animator:
   serializedVersion: 3

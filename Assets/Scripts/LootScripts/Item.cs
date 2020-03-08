@@ -27,37 +27,49 @@ public class Item : MonoBehaviour
     //Text to show
     protected string tString;
 
+    bool canBuy = false;
+
     private void Awake()
     {
         itemText = GetComponentInChildren<TextMeshProUGUI>();
         textImg = GetComponentInChildren<Image>();
-        SetText();
-        if (itemText != null) itemText.text = tString;
+        Invoke("SetText", 0.5f);
         switch(rarity)
         {
             case (Rarity.common):
-                textImg.color = new Color(1, 0, 0, 0.25f);
+                textImg.color = new Color(1, 0, 0, 0.33f);
                 break;
             case (Rarity.uncommon):
-                textImg.color = new Color(0, 1, 0, 0.25f);
+                textImg.color = new Color(0, 1, 0, 0.33f);
                 break;
             case (Rarity.rare):
-                textImg.color = new Color(0, 0, 1, 0.25f);
+                textImg.color = new Color(0, 0, 1, 0.33f);
                 break;
             case (Rarity.legendary):
-                textImg.color = new Color(1, 1, 0, 0.25f);
+                textImg.color = new Color(1, 1, 0, 0.33f);
                 break;
         }
     }
 
-    public virtual void SetText() { }
+    public virtual void SetText()
+    {
+        if (itemText != null) itemText.text = tString;
+    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && canPickup)
+        if (Input.GetKeyDown(KeyCode.E) && canPickup && canBuy)
         {
-            PickupItem();
+            if (buying)
+            {
+                PlayerController.player.gold -= cost;
+                buying = false;
+                PickupItem();
+            }
         }
+
+        if (PlayerController.player.gold > cost) canBuy = true;
+        else canBuy = false;
 
         itemText.transform.parent.gameObject.SetActive(canPickup);
     }

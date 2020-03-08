@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
 
         if (inp.magnitude != 0)
         {
-            bod.AddForce(new Vector2(inp.x * spd * Time.deltaTime, inp.y * spd * Time.deltaTime));
+            bod.AddForce(new Vector2(inp.x * (spd + (spd * spdMod)) * Time.deltaTime, inp.y * spd * Time.deltaTime));
         }
 
         if (!weapon.attacking)

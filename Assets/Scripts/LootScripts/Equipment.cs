@@ -51,11 +51,6 @@ public class Equipment : Item
 
     public override void PickupItem()
     {
-        if (!buying) PlayerController.player.SwitchEquipment(this);
-
-        if (buying && PlayerController.player.gold > cost)
-        {
-
-        }
+        PlayerController.player.SwitchEquipment(this);        
     }
 }

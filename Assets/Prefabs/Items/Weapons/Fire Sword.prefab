@@ -50,7 +50,7 @@ MonoBehaviour:
   itemDescription: Deals minor burning damage
   itemText: {fileID: 5860120210164960894}
   textImg: {fileID: 0}
-  rarity: 30
+  rarity: 40
   buying: 0
   cost: 20
   type: 0

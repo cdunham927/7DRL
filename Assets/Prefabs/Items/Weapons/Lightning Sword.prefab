@@ -50,9 +50,9 @@ MonoBehaviour:
   itemDescription: Deals minor lightning damage
   itemText: {fileID: 0}
   textImg: {fileID: 0}
-  rarity: 30
+  rarity: 40
   buying: 0
-  cost: 1
+  cost: 20
   type: 0
   effect: 4
   cooldown: 0.75

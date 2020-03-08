@@ -631,12 +631,12 @@ PrefabInstance:
     - target: {fileID: 6719583286340308504, guid: 39348a69d5ac06048a50d09927509a44,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.297
+      value: 2.27
       objectReference: {fileID: 0}
     - target: {fileID: 6719583286340308504, guid: 39348a69d5ac06048a50d09927509a44,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.689
+      value: -0.96
       objectReference: {fileID: 0}
     - target: {fileID: 6719583286340308504, guid: 39348a69d5ac06048a50d09927509a44,
         type: 3}
@@ -683,10 +683,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6719583286340308505, guid: 39348a69d5ac06048a50d09927509a44,
+        type: 3}
+      propertyPath: itemName
+      value: Boots of Haste
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719583286340308505, guid: 39348a69d5ac06048a50d09927509a44,
+        type: 3}
+      propertyPath: itemDescription
+      value: Increases move speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719583286340308505, guid: 39348a69d5ac06048a50d09927509a44,
+        type: 3}
+      propertyPath: rarity
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719583286340308505, guid: 39348a69d5ac06048a50d09927509a44,
+        type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719583286340308505, guid: 39348a69d5ac06048a50d09927509a44,
+        type: 3}
+      propertyPath: modAmt
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719583286340308505, guid: 39348a69d5ac06048a50d09927509a44,
+        type: 3}
+      propertyPath: effect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6719583286340308510, guid: 39348a69d5ac06048a50d09927509a44,
         type: 3}
       propertyPath: m_Name
-      value: Poison Amulet
+      value: Boots of Haste
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719583286340308511, guid: 39348a69d5ac06048a50d09927509a44,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d92c605b6dfea774f974448efc83587b,
+        type: 3}
+    - target: {fileID: 6719583286340308511, guid: 39348a69d5ac06048a50d09927509a44,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719583286340308511, guid: 39348a69d5ac06048a50d09927509a44,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719583286340308511, guid: 39348a69d5ac06048a50d09927509a44,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39348a69d5ac06048a50d09927509a44, type: 3}

@@ -18,7 +18,7 @@ public class Item : MonoBehaviour
     bool canPickup = false;
 
     //Rarity of item
-    public enum Rarity { legendary = 5, rare = 15, uncommon = 30, common = 100 }
+    public enum Rarity { legendary = 5, rare = 15, uncommon = 40, common = 100 }
     public Rarity rarity = Rarity.common;
 
     //For buying items from the shop
@@ -58,14 +58,16 @@ public class Item : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && canPickup && canBuy)
+        if (Input.GetKeyDown(KeyCode.E) && canPickup)
         {
-            if (buying)
+            if (buying && canBuy)
             {
                 PlayerController.player.gold -= cost;
                 buying = false;
                 PickupItem();
             }
+
+            if (!buying) PickupItem();
         }
 
         if (PlayerController.player.gold > cost) canBuy = true;

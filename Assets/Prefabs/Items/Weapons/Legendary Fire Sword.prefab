@@ -52,7 +52,7 @@ MonoBehaviour:
   textImg: {fileID: 0}
   rarity: 5
   buying: 0
-  cost: 1
+  cost: 75
   type: 0
   effect: 2
   cooldown: 0.75

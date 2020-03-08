@@ -100,7 +100,7 @@ MonoBehaviour:
   itemDescription: Increases potency of poison weapons
   itemText: {fileID: 0}
   textImg: {fileID: 0}
-  rarity: 100
+  rarity: 40
   buying: 0
   cost: 10
   type: 2
